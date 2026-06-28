@@ -8,7 +8,7 @@ This repository hosts the Mossrake Language Model Diligence Assessment instrumen
 
 ## What's Here
 
-- **lmd-a-assessment.html** — The Language Model Diligence Assessment. Five questions that measure the gap between what's at stake and what you can see about how a language model operates in your process.
+- **lmd-a.html** — The Language Model Diligence Assessment. Five questions that measure the gap between what's at stake and what you can see about how a language model operates in your process.
 - **lmd-a-terms-of-use.html** — Terms of Use governing the assessment.
 
 ## About Language Model Diligence
