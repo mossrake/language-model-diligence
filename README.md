@@ -13,7 +13,7 @@ This repository hosts the Mossrake Language Model Diligence Assessment instrumen
 
 ## About Language Model Diligence
 
-Language Model Diligence is a framework for systematically understanding AI process exposure, grounded in established practices from quantitative finance, pharmaceutical manufacturing, and avionics safety engineering.
+Language Model Diligence is the practice of applying established model governance disciplines to language model deployments. The Mossrake Language Model Diligence framework provides a structured approach to understanding AI process exposure, grounded in established practices from quantitative finance, pharmaceutical manufacturing, and avionics safety engineering.
 
 The framework measures two things:
 - **Consequence** (Q1) — how much is at stake if the model produces a wrong output
@@ -31,17 +31,19 @@ See [LICENSE.md](LICENSE.md) for full terms.
 - ✅ Take the assessment for your own organization
 - ✅ Academic citation and discussion
 - ❌ Commercial use without explicit written permission
-- ❌ Offering Language Model Diligence assessments, certifications, or consulting to third parties
+- ❌ Offering assessments, certifications, or consulting to third parties based on the Mossrake framework
 - ❌ Incorporation into commercial products or services
 - ❌ Hosting or redistributing the assessment instrument
 
 ## Intellectual Property
 
-The Language Model Diligence framework, including the five-question structure, the scoring methodology, the tier designations, the concept of "exposure" as the gap between consequence and coverage, and all associated documentation, is the intellectual property of Mossrake Group, LLC.
+"Language Model Diligence" describes a practice — the application of established model governance disciplines to language model deployments. As a category, it is not proprietary to Mossrake, and its broad adoption is encouraged.
+
+The Mossrake Language Model Diligence framework — including the five-question structure, the scoring methodology, the tier designations, the concept of "exposure" as the gap between consequence and coverage, the assessment instrument, and all associated documentation — is the intellectual property of Mossrake Group, LLC.
 
 Mossrake® and Mossrake Language Model Diligence™ are trademarks of Mossrake Group, LLC.
 
-Organizations are encouraged to adopt the Language Model Diligence framework for internal use with attribution to Mossrake Group, LLC. Commercial use of the framework requires a license.
+Organizations are encouraged to adopt Language Model Diligence as a practice and to use the Mossrake framework for internal evaluation with attribution to Mossrake Group, LLC. Commercial use of the framework requires a license.
 
 ## Contact
 

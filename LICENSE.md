@@ -11,15 +11,17 @@
 ## Restrictions
 
 - NO commercial use without explicit written permission from Mossrake Group, LLC
-- NO offering Language Model Diligence assessments, certifications, consulting, or related services to third parties for compensation
+- NO offering assessments, certifications, consulting, or related services to third parties for compensation based on or derived from the Mossrake Language Model Diligence framework
 - NO incorporation into commercial products, platforms, or services
 - NO hosting, redistributing, or serving the assessment instrument from any domain or infrastructure other than Mossrake's authorized locations
 - NO creating derivative assessment instruments based on this implementation
 - NO use of the assessment data, scoring logic, or outputs to develop, train, benchmark, or commercialize competing assessment methodologies or services
 
-## Intellectual Property
+## Category and Framework
 
-The Language Model Diligence framework, including but not limited to the five-question structure, the scoring methodology, the tier designations (Calibrated, Partial, Uncertain), the concept of "exposure" as the gap between consequence and coverage, the four coverage dimensions (Identity, Drift, Verification, Recovery), and all associated documentation, is the proprietary intellectual property of Mossrake Group, LLC.
+"Language Model Diligence" describes a practice: the application of established model governance disciplines to language model deployments. As a category, it is not proprietary to Mossrake, and its broad adoption across industries and institutions is encouraged.
+
+The Mossrake Language Model Diligence framework — the specific five-question assessment structure, the scoring methodology, the tier designations (Calibrated, Partial, Uncertain), the four coverage dimensions (Identity, Drift, Verification, Recovery), the concept of "exposure" as the gap between consequence and coverage, the assessment instrument, and all associated documentation — is the proprietary intellectual property of Mossrake Group, LLC. The facilitated assessment methodology contains proprietary elements that are not publicly disclosed.
 
 Mossrake® and Mossrake Language Model Diligence™ are trademarks of Mossrake Group, LLC. Use of these marks without express written consent is strictly prohibited.
 
@@ -34,7 +36,7 @@ When referencing this work, include attribution to:
 
 ## Framework Adoption
 
-Organizations are encouraged to adopt the Language Model Diligence framework for internal use. Internal use means evaluating your own organization's AI processes using the concepts described in the framework. Any published reference to the framework, derivative work, or commercial application requires attribution to Mossrake Group, LLC. Commercial use requires explicit written permission.
+Organizations are encouraged to adopt Language Model Diligence as a practice and to reference the category freely. Internal use of the Mossrake Language Model Diligence framework — meaning evaluating your own organization's AI processes using the concepts described in the framework — is encouraged with attribution to Mossrake Group, LLC. Any published reference to the Mossrake framework, derivative work based on the framework, or commercial application of the framework requires attribution. Commercial use requires explicit written permission.
 
 ## Disclaimer
 
@@ -49,4 +51,4 @@ info@mossrake.com
 
 ---
 
-Last updated: July 2026
+Last updated: June 2026
