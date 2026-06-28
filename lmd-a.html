@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mossrake Language Model Diligence Assessment</title>
+
+<!-- Google Analytics 4 — replace G-471DTZWSZC with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-471DTZWSZC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-471DTZWSZC');
+</script>
+<style>
+:root {
+  --dk-blue: #1B3A5C;
+  --md-blue: #2E75B6;
+  --lt-blue: #D5E8F0;
+  --dk-gray: #333;
+  --md-gray: #666;
+  --lt-gray: #f5f5f3;
+  --white: #fff;
+  --green: #0F6E56;
+  --green-bg: #E1F5EE;
+  --amber: #854F0B;
+  --amber-bg: #FAEEDA;
+  --red: #A32D2D;
+  --red-bg: #FCEBEB;
+  --radius: 8px;
+  --max-w: 960px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--dk-gray);
+  line-height: 1.6;
+  background: var(--white);
+}
+
+.assess {
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 10% 60px;
+}
+
+/* ── STATEMENT ── */
+.statement {
+  padding: 40px 0 32px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 32px;
+}
+
+.statement-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dk-blue);
+  margin-bottom: 16px;
+}
+
+.statement h1 {
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--dk-blue);
+  margin-bottom: 16px;
+}
+
+.statement p {
+  font-size: 15px;
+  color: var(--md-gray);
+  margin-bottom: 12px;
+}
+
+.statement .scope {
+  font-size: 14px;
+  color: var(--md-gray);
+  font-style: italic;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.examples {
+  margin: 16px 0;
+}
+
+.examples summary {
+  font-size: 14px;
+  color: var(--md-blue);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.example-text {
+  font-size: 14px;
+  color: var(--md-gray);
+  font-style: italic;
+  margin: 8px 0 4px;
+  padding-left: 16px;
+  border-left: 2px solid #e0e0e0;
+}
+
+/* ── FORM ELEMENTS ── */
+.field-group {
+  margin-bottom: 32px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.field-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--md-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.question-header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.q-number {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dk-blue);
+  min-width: 28px;
+}
+
+.q-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--dk-gray);
+}
+
+.q-dim {
+  font-size: 12px;
+  color: var(--md-gray);
+  font-style: italic;
+  margin-left: auto;
+}
+
+.q-sub {
+  font-size: 14px;
+  color: var(--md-gray);
+  margin: 4px 0 16px 38px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--dk-gray);
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--md-blue);
+}
+
+textarea::placeholder {
+  color: #aaa;
+}
+
+/* ── SCALE OPTIONS ── */
+.scale-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 12px 0 16px 38px;
+}
+
+.scale-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid #e8e8e8;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.scale-option:hover {
+  border-color: var(--md-blue);
+  background: #f8fafc;
+}
+
+.scale-option.selected {
+  border-color: var(--dk-blue);
+  background: var(--lt-blue);
+}
+
+.scale-option input[type="radio"] {
+  display: none;
+}
+
+.scale-num {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--dk-blue);
+  min-width: 20px;
+  text-align: center;
+  margin-top: 1px;
+}
+
+.scale-label {
+  font-size: 14px;
+  color: var(--dk-gray);
+  line-height: 1.5;
+}
+
+.scale-label strong {
+  font-weight: 600;
+}
+
+/* ── VERBATIM ── */
+.verbatim-section {
+  margin: 12px 0 0 38px;
+}
+
+.verbatim-prompt {
+  font-size: 14px;
+  color: var(--md-gray);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.verbatim-section textarea {
+  min-height: 70px;
+}
+
+/* ── EXIT MESSAGE ── */
+.exit-message {
+  background: var(--lt-gray);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin: 16px 0 0 38px;
+  text-align: center;
+}
+
+.exit-message p {
+  font-size: 15px;
+  color: var(--md-gray);
+}
+
+.exit-message .exit-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dk-gray);
+  margin-bottom: 8px;
+}
+
+/* ── TERMS & EVALUATE ── */
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 24px 0;
+  padding: 16px;
+  background: var(--lt-gray);
+  border-radius: var(--radius);
+}
+
+.terms-row input[type="checkbox"] {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.terms-row label {
+  font-size: 14px;
+  color: var(--md-gray);
+  cursor: pointer;
+}
+
+.terms-row a {
+  color: var(--md-blue);
+  text-decoration: none;
+}
+
+.terms-row a:hover {
+  text-decoration: underline;
+}
+
+/* ── TERMS POPUP ── */
+.terms-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.terms-overlay.open {
+  display: flex;
+}
+
+.terms-popup {
+  background: var(--white);
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.terms-popup-header {
+  padding: 14px 24px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terms-popup-header h3 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dk-blue);
+}
+
+.terms-close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: var(--md-gray);
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.terms-popup-body {
+  padding: 14px 24px;
+  overflow-y: auto;
+  flex: 1;
+  font-size: 12.5px;
+  color: var(--dk-gray);
+  line-height: 1.55;
+}
+
+.terms-popup-body h4 {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--dk-blue);
+  margin: 10px 0 3px;
+}
+
+.terms-popup-body h4:first-child {
+  margin-top: 0;
+}
+
+.terms-popup-body p {
+  margin: 0 0 6px;
+}
+
+.terms-popup-footer {
+  padding: 12px 24px;
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--dk-blue);
+  color: var(--white);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: #244a6f;
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--dk-blue);
+  border: 1px solid var(--dk-blue);
+}
+
+.btn-secondary:not(:disabled):hover {
+  background: var(--lt-blue);
+}
+
+.evaluate-row {
+  text-align: center;
+  padding: 24px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* ── RESULTS ── */
+.results {
+  display: none;
+  padding: 32px 0 0;
+  border-top: 2px solid var(--dk-blue);
+  margin-top: 32px;
+}
+
+.results.visible {
+  display: block;
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.results-header h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--dk-blue);
+  margin-bottom: 12px;
+}
+
+.tier-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.tier-calibrated { background: var(--green-bg); color: var(--green); }
+.tier-partial { background: var(--amber-bg); color: var(--amber); }
+.tier-uncertain { background: var(--red-bg); color: var(--red); }
+
+.results-summary {
+  font-size: 15px;
+  color: var(--md-gray);
+  text-align: center;
+  margin: 16px 0 32px;
+  line-height: 1.7;
+}
+
+.radar-container {
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+.radar-container svg {
+  width: 300px;
+  height: 280px;
+}
+
+.radar-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: var(--md-gray);
+}
+
+.radar-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-line-dashed {
+  display: inline-block;
+  width: 18px;
+  border-top: 2px dashed rgba(27,58,92,0.4);
+}
+
+.legend-line-solid {
+  display: inline-block;
+  width: 18px;
+  border-top: 2px solid var(--dk-blue);
+}
+
+.gap-list {
+  margin: 0 0 32px;
+}
+
+.gap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+
+.gap-item.ok { background: var(--green-bg); }
+.gap-item.gap { background: var(--amber-bg); }
+.gap-item.severe { background: var(--red-bg); }
+
+.gap-dim {
+  font-size: 14px;
+  font-weight: 600;
+  min-width: 90px;
+}
+
+.gap-item.ok .gap-dim { color: var(--green); }
+.gap-item.gap .gap-dim { color: var(--amber); }
+.gap-item.severe .gap-dim { color: var(--red); }
+
+.gap-detail {
+  font-size: 14px;
+  color: var(--dk-gray);
+}
+
+.gap-scores {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.gap-item.ok .gap-scores { color: var(--green); }
+.gap-item.gap .gap-scores { color: var(--amber); }
+.gap-item.severe .gap-scores { color: var(--red); }
+
+/* ── CERTIFICATE REQUEST ── */
+.cert-section {
+  display: none;
+  background: var(--lt-gray);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: 32px;
+}
+
+.cert-section.visible {
+  display: block;
+}
+
+.cert-section h3 {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--dk-blue);
+  margin-bottom: 4px;
+}
+
+.cert-section .cert-sub {
+  font-size: 14px;
+  color: var(--md-gray);
+  margin-bottom: 20px;
+}
+
+.cert-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.cert-fields input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--dk-gray);
+}
+
+.cert-fields input:focus {
+  outline: none;
+  border-color: var(--md-blue);
+}
+
+.cert-fields input::placeholder { color: #aaa; }
+
+.cert-email {
+  grid-column: 1 / -1;
+}
+
+.cert-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.cert-note {
+  font-size: 12px;
+  color: var(--md-gray);
+  font-style: italic;
+}
+
+.cert-sent {
+  display: none;
+  text-align: center;
+  padding: 20px;
+}
+
+.cert-sent.visible { display: block; }
+
+.cert-sent p {
+  font-size: 15px;
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* ── FOOTER NOTE ── */
+.assess-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: var(--dk-gray);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .cert-fields { grid-template-columns: 1fr; }
+  .cert-fields .cert-email { grid-column: 1; }
+  .scale-options { margin-left: 0; }
+  .verbatim-section { margin-left: 0; }
+  .exit-message { margin-left: 0; }
+  .q-dim { display: none; }
+  .q-sub { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="assess">
+
+  <!-- ══════ STATEMENT ══════ -->
+  <div class="statement">
+    <div class="statement-badge">Mossrake Language Model Diligence</div>
+    <h1>Mossrake Language Model Diligence Assessment</h1>
+    <p>This assessment evaluates a single AI model deployed in a defined process. For each AI model in your organization's portfolio, a separate assessment should be completed by the person or team with direct knowledge of both the technical implementation and the business context.</p>
+    <p>Processes that involve multiple models, pipelines, or agentic architectures require a facilitated assessment &ndash; <a href="mailto:info@mossrake.com" style="color:var(--md-blue)">contact Mossrake</a> for details.</p>
+
+    <details class="examples">
+      <summary>See examples from previous assessments</summary>
+      <p class="example-text">"We use a large language model to generate draft responses to inbound customer support tickets. It receives the customer's message and their account history, and generates a draft response that goes into a queue for agent review before sending."</p>
+      <p class="example-text">"A language model reviews incoming invoices against purchase orders and flags discrepancies. Flagged items go to accounts payable for manual review; matched items are auto-approved for payment up to $5,000."</p>
+      <p class="example-text">"Our compliance team uses a language model to screen marketing copy against regulatory guidelines before publication. The model identifies potential violations and generates a summary for the compliance officer to review."</p>
+    </details>
+
+    <div class="field-group" style="margin-top:20px;margin-bottom:0">
+      <label class="field-label">Industry</label>
+      <select id="industry-select" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:var(--radius);font-family:inherit;font-size:14px;color:var(--dk-gray);background:var(--white);cursor:pointer">
+        <option value="">Select your industry</option>
+        <option value="Financial Services">Financial Services</option>
+        <option value="Healthcare">Healthcare</option>
+        <option value="Legal / Professional Services">Legal / Professional Services</option>
+        <option value="Technology / Software">Technology / Software</option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Retail / E-commerce">Retail / E-commerce</option>
+        <option value="Insurance">Insurance</option>
+        <option value="Government">Government</option>
+        <option value="Education">Education</option>
+        <option value="Media / Communications">Media / Communications</option>
+        <option value="Energy / Utilities">Energy / Utilities</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field-group" style="margin-top:16px;margin-bottom:0">
+      <label class="field-label">Describe the model and its role in your process (recommended)</label>
+      <textarea id="process-desc" placeholder="What does the model do? What inputs does it receive? What is done with its output?"></textarea>
+    </div>
+  </div>
+
+  <!-- ══════ Q1: CONSEQUENCE ══════ -->
+  <div class="field-group hidden" id="q1-group">
+    <div class="question-header">
+      <span class="q-number">Q1</span>
+      <span class="q-text">How much does it matter if this model produces a wrong output?</span>
+      <span class="q-dim">Consequence</span>
+    </div>
+    <p class="q-sub">This determines how the remaining questions are evaluated.</p>
+
+    <div class="scale-options" id="q1-options">
+      <label class="scale-option" data-q="q1" data-val="1">
+        <input type="radio" name="q1" value="1">
+        <span class="scale-num">1</span>
+        <span class="scale-label"><strong>Negligible.</strong> Wrong outputs for a week would not be noticed outside the immediate team.</span>
+      </label>
+      <label class="scale-option" data-q="q1" data-val="2">
+        <input type="radio" name="q1" value="2">
+        <span class="scale-num">2</span>
+        <span class="scale-label"><strong>Inconvenient.</strong> Wrong outputs would cause rework or minor inefficiency with no impact beyond the team.</span>
+      </label>
+      <label class="scale-option" data-q="q1" data-val="3">
+        <input type="radio" name="q1" value="3">
+        <span class="scale-num">3</span>
+        <span class="scale-label"><strong>Consequential.</strong> Wrong outputs could affect other teams, customers, or decisions, but damage is correctable.</span>
+      </label>
+      <label class="scale-option" data-q="q1" data-val="4">
+        <input type="radio" name="q1" value="4">
+        <span class="scale-num">4</span>
+        <span class="scale-label"><strong>Damaging.</strong> Wrong outputs could cause financial loss, reputational damage, or compliance issues requiring remediation.</span>
+      </label>
+      <label class="scale-option" data-q="q1" data-val="5">
+        <input type="radio" name="q1" value="5">
+        <span class="scale-num">5</span>
+        <span class="scale-label"><strong>Critical.</strong> Wrong outputs could cause regulatory action, legal liability, safety consequences, or irreversible harm.</span>
+      </label>
+    </div>
+
+    <div class="exit-message" id="q1-exit" style="display:none">
+      <p class="exit-title">Formal diligence may not be necessary for this process.</p>
+      <p>At consequence level 1, the stakes may not justify a structured assessment. Consider revisiting if the model's role changes or if downstream consequences become clearer.</p>
+    </div>
+  </div>
+
+  <!-- ══════ Q2: IDENTITY ══════ -->
+  <div class="field-group hidden" id="q2-group">
+    <div class="question-header">
+      <span class="q-number">Q2</span>
+      <span class="q-text">Do you know exactly which model and version is running this process?</span>
+      <span class="q-dim">Identity</span>
+    </div>
+
+    <div class="scale-options" id="q2-options">
+      <label class="scale-option" data-q="q2" data-val="1">
+        <input type="radio" name="q2" value="1">
+        <span class="scale-num">1</span>
+        <span class="scale-label"><strong>Unknown.</strong> We don't know what model is running this process.</span>
+      </label>
+      <label class="scale-option" data-q="q2" data-val="2">
+        <input type="radio" name="q2" value="2">
+        <span class="scale-num">2</span>
+        <span class="scale-label"><strong>General.</strong> We know the provider but not the specific model.</span>
+      </label>
+      <label class="scale-option" data-q="q2" data-val="3">
+        <input type="radio" name="q2" value="3">
+        <span class="scale-num">3</span>
+        <span class="scale-label"><strong>Approximate.</strong> We know the model family but haven't pinned a specific version.</span>
+      </label>
+      <label class="scale-option" data-q="q2" data-val="4">
+        <input type="radio" name="q2" value="4">
+        <span class="scale-num">4</span>
+        <span class="scale-label"><strong>Specified.</strong> We specify the exact model and version in our implementation.</span>
+      </label>
+      <label class="scale-option" data-q="q2" data-val="5">
+        <input type="radio" name="q2" value="5">
+        <span class="scale-num">5</span>
+        <span class="scale-label"><strong>Verified.</strong> We specify the exact model and version and confirm that what's running matches what's specified.</span>
+      </label>
+    </div>
+
+    <div class="verbatim-section">
+      <p class="verbatim-prompt">Describe how the model is specified in your implementation. If you use a framework, wrapper, or routing layer, note that here.</p>
+      <textarea id="q2-verbatim" placeholder="Your response..."></textarea>
+    </div>
+  </div>
+
+  <!-- ══════ Q3: DRIFT ══════ -->
+  <div class="field-group hidden" id="q3-group">
+    <div class="question-header">
+      <span class="q-number">Q3</span>
+      <span class="q-text">If the model or its behavior changed, would you know?</span>
+      <span class="q-dim">Drift</span>
+    </div>
+
+    <div class="scale-options" id="q3-options">
+      <label class="scale-option" data-q="q3" data-val="1">
+        <input type="radio" name="q3" value="1">
+        <span class="scale-num">1</span>
+        <span class="scale-label"><strong>Unmonitored.</strong> We have no way of knowing if the model's behavior changed.</span>
+      </label>
+      <label class="scale-option" data-q="q3" data-val="2">
+        <input type="radio" name="q3" value="2">
+        <span class="scale-num">2</span>
+        <span class="scale-label"><strong>Anecdotal.</strong> We'd find out if someone happened to notice outputs seemed different.</span>
+      </label>
+      <label class="scale-option" data-q="q3" data-val="3">
+        <input type="radio" name="q3" value="3">
+        <span class="scale-num">3</span>
+        <span class="scale-label"><strong>Informal.</strong> We track quality informally or subscribe to provider announcements, but don't test systematically.</span>
+      </label>
+      <label class="scale-option" data-q="q3" data-val="4">
+        <input type="radio" name="q3" value="4">
+        <span class="scale-num">4</span>
+        <span class="scale-label"><strong>Monitored.</strong> We have defined quality metrics or automated checks that would surface significant changes.</span>
+      </label>
+      <label class="scale-option" data-q="q3" data-val="5">
+        <input type="radio" name="q3" value="5">
+        <span class="scale-num">5</span>
+        <span class="scale-label"><strong>Tested.</strong> We run automated behavioral regression tests against defined acceptance criteria.</span>
+      </label>
+    </div>
+
+    <div class="verbatim-section">
+      <p class="verbatim-prompt">Describe how you would learn that this model's behavior has changed. Include any monitoring, testing, or alerting mechanisms in place.</p>
+      <textarea id="q3-verbatim" placeholder="Your response..."></textarea>
+    </div>
+  </div>
+
+  <!-- ══════ Q4: VERIFICATION ══════ -->
+  <div class="field-group hidden" id="q4-group">
+    <div class="question-header">
+      <span class="q-number">Q4</span>
+      <span class="q-text">Is output quality checked before the output reaches its end use?</span>
+      <span class="q-dim">Verification</span>
+    </div>
+
+    <div class="scale-options" id="q4-options">
+      <label class="scale-option" data-q="q4" data-val="1">
+        <input type="radio" name="q4" value="1">
+        <span class="scale-num">1</span>
+        <span class="scale-label"><strong>None.</strong> The model's output goes directly to its end use with no check of any kind.</span>
+      </label>
+      <label class="scale-option" data-q="q4" data-val="2">
+        <input type="radio" name="q4" value="2">
+        <span class="scale-num">2</span>
+        <span class="scale-label"><strong>Incidental.</strong> Someone may see the output in passing but does not review or approve it.</span>
+      </label>
+      <label class="scale-option" data-q="q4" data-val="3">
+        <input type="radio" name="q4" value="3">
+        <span class="scale-num">3</span>
+        <span class="scale-label"><strong>Sampled.</strong> Outputs are spot-checked or reviewed on a sample basis, but not every output is checked.</span>
+      </label>
+      <label class="scale-option" data-q="q4" data-val="4">
+        <input type="radio" name="q4" value="4">
+        <span class="scale-num">4</span>
+        <span class="scale-label"><strong>Systematic.</strong> An automated quality gate, rule-based filter, or defined review process checks every output.</span>
+      </label>
+      <label class="scale-option" data-q="q4" data-val="5">
+        <input type="radio" name="q4" value="5">
+        <span class="scale-num">5</span>
+        <span class="scale-label"><strong>Qualified.</strong> Every output is reviewed by a person with relevant domain expertise before it reaches its end use.</span>
+      </label>
+    </div>
+
+    <div class="verbatim-section">
+      <p class="verbatim-prompt">Describe what happens to the model's output between generation and end use. Who or what checks it, and what happens when an output is flagged?</p>
+      <textarea id="q4-verbatim" placeholder="Your response..."></textarea>
+    </div>
+  </div>
+
+  <!-- ══════ Q5: RECOVERY ══════ -->
+  <div class="field-group hidden" id="q5-group">
+    <div class="question-header">
+      <span class="q-number">Q5</span>
+      <span class="q-text">If a bad output got through, how quickly would it be caught?</span>
+      <span class="q-dim">Recovery</span>
+    </div>
+
+    <div class="scale-options" id="q5-options">
+      <label class="scale-option" data-q="q5" data-val="1">
+        <input type="radio" name="q5" value="1">
+        <span class="scale-num">1</span>
+        <span class="scale-label"><strong>Undetectable.</strong> We would likely not detect a bad output unless someone external flagged it.</span>
+      </label>
+      <label class="scale-option" data-q="q5" data-val="2">
+        <input type="radio" name="q5" value="2">
+        <span class="scale-num">2</span>
+        <span class="scale-label"><strong>Eventual.</strong> Bad outputs would surface during periodic audits or quarterly reviews. Likely weeks.</span>
+      </label>
+      <label class="scale-option" data-q="q5" data-val="3">
+        <input type="radio" name="q5" value="3">
+        <span class="scale-num">3</span>
+        <span class="scale-label"><strong>Lagging.</strong> Bad outputs would be caught within days through periodic review or batch checking.</span>
+      </label>
+      <label class="scale-option" data-q="q5" data-val="4">
+        <input type="radio" name="q5" value="4">
+        <span class="scale-num">4</span>
+        <span class="scale-label"><strong>Prompt.</strong> Bad outputs would be caught within hours through same-day review or automated monitoring.</span>
+      </label>
+      <label class="scale-option" data-q="q5" data-val="5">
+        <input type="radio" name="q5" value="5">
+        <span class="scale-num">5</span>
+        <span class="scale-label"><strong>Immediate.</strong> Real-time monitoring, automated alerts, or rapid feedback loops would catch it within minutes.</span>
+      </label>
+    </div>
+
+    <div class="verbatim-section">
+      <p class="verbatim-prompt">Describe how a bad output that passed any existing checks would eventually come to someone's attention.</p>
+      <textarea id="q5-verbatim" placeholder="Your response..."></textarea>
+    </div>
+  </div>
+
+  <!-- ══════ TERMS & EVALUATE ══════ -->
+  <div id="terms-section" class="hidden">
+    <div class="evaluate-row">
+      <button class="btn btn-primary" id="terms-evaluate-btn" disabled>Agree to Terms of Use &amp; Evaluate</button>
+    </div>
+  </div>
+
+  <!-- ── TERMS POPUP ── -->
+  <div class="terms-overlay" id="terms-overlay">
+    <div class="terms-popup">
+      <div class="terms-popup-header">
+        <h3>Terms of use</h3>
+        <button class="terms-close-btn" id="terms-close-x">&times;</button>
+      </div>
+      <div class="terms-popup-body">
+
+        <div style="background:#f0f4f8;border-radius:6px;padding:10px 14px;margin-bottom:14px;border-left:3px solid var(--dk-blue)">
+          <p style="margin:0;font-weight:600;font-size:12.5px;color:var(--dk-blue)">Important: This assessment is based solely on information you provide. A Provisional Assessment is <u>not</u> an independent audit, certification, or compliance determination.</p>
+        </div>
+
+        <h4>Before you begin</h4>
+        <p>The Language Model Diligence Assessment is an informational assessment tool. It is <strong>not</strong> a professional certification, audit, compliance determination, or guarantee of any kind.</p>
+
+        <h4>Self-reported assessment</h4>
+        <p>The assessment result is based entirely on the information you provide. Mossrake does not independently verify your responses. The resulting tier designation reflects your self-reported information and should not be represented as an independent evaluation or certification.</p>
+
+        <h4>Your responsibilities</h4>
+        <p>You represent that your responses are accurate to the best of your knowledge. You agree not to alter, fabricate, or misrepresent assessment results.</p>
+
+        <h4>No professional advice</h4>
+        <p>The Service does not provide legal, regulatory, compliance, financial, or risk management advice. You should consult qualified professionals regarding your specific circumstances.</p>
+
+        <h4>Use at your own risk</h4>
+        <p>The Service is provided "as is." Use of the assessment and any decisions based upon it are at your own discretion and risk.</p>
+
+        <p style="margin-top:20px"><a href="https://mossrake.github.io/language-model-diligence/lmd-a-terms-of-use.html" target="_blank" style="color:var(--md-blue);font-weight:500">Read the full Terms of Use &rarr;</a></p>
+      </div>
+      <div class="terms-popup-footer" style="display:flex;flex-direction:column;gap:10px;align-items:stretch">
+        <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-size:12px;color:var(--dk-gray)">
+          <input type="checkbox" id="popup-agree-check" style="margin-top:2px;width:15px;height:15px;flex-shrink:0">
+          <span><strong>I have read the summary above, understand that the assessment is based on my self-reported information, and agree to the <a href="https://mossrake.github.io/language-model-diligence/lmd-a-terms-of-use.html" target="_blank" style="color:var(--md-blue)">Terms of Use</a>.</strong></span>
+        </label>
+        <button class="btn btn-primary" id="terms-accept-btn" disabled style="width:100%;padding:10px 20px;font-size:14px">I Agree &amp; Start Assessment</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ RESULTS ══════ -->
+  <div class="results" id="results">
+    <div class="results-header">
+      <h2>Provisional Assessment &ndash; Results</h2>
+      <p id="assess-date" style="font-size:13px;color:var(--md-gray);margin:4px 0 2px"></p>
+      <p id="assess-ref" style="font-size:12px;color:var(--md-gray);margin:0 0 12px;font-family:monospace"></p>
+      <div id="tier-display" style="display:flex;align-items:center;justify-content:center;gap:8px">
+        <span id="tier-0" class="tier-badge tier-calibrated" style="font-size:11px;padding:6px 14px;opacity:0.3;transform:scale(0.85)">Calibrated</span>
+        <span id="tier-1" class="tier-badge tier-partial" style="font-size:11px;padding:6px 14px;opacity:0.3;transform:scale(0.85)">Partial</span>
+        <span id="tier-2" class="tier-badge tier-uncertain" style="font-size:11px;padding:6px 14px;opacity:0.3;transform:scale(0.85)">Uncertain</span>
+      </div>
+    </div>
+
+    <p class="results-summary" id="results-summary"></p>
+
+    <div class="radar-container">
+      <svg id="radar-chart" viewBox="0 0 320 280"></svg>
+      <div class="radar-legend">
+        <span><span class="legend-line-dashed"></span> Consequence target</span>
+        <span><span class="legend-line-solid"></span> Coverage</span>
+      </div>
+    </div>
+
+    <div class="gap-list" id="gap-list"></div>
+
+    <div style="text-align:center;padding:24px 0 8px;font-size:13px;color:var(--md-gray)">
+      <p>You can print this page to save your results.</p>
+      <p style="margin-top:8px">Questions about your assessment? <a href="mailto:info@mossrake.com" style="color:var(--md-blue)">info@mossrake.com</a></p>
+    </div>
+  </div>
+
+  <!-- ══════ FOOTER ══════ -->
+  <div class="assess-footer">
+    &copy; 2026 Mossrake Group, LLC. Mossrake&reg; and Mossrake Language Model Diligence&trade; are trademarks of Mossrake Group, LLC. Use without express written consent strictly prohibited.
+  </div>
+
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   DATA CAPTURE
+   Fires a GA4 custom event on evaluation.
+   GA4 snippet is loaded in the page head.
+   Measurement ID: G-471DTZWSZC
+   ═══════════════════════════════════════════════════ */
+
+function captureAssessment() {
+  var result = computeResult();
+
+  if (typeof gtag === 'function') {
+    gtag('event', 'assessment_complete', {
+      industry: document.getElementById('industry-select').value || '(not selected)',
+      q1: state.q1,
+      q2: state.q2,
+      q3: state.q3,
+      q4: state.q4,
+      q5: state.q5,
+      tier: result.tier,
+      threshold: result.threshold
+    });
+  }
+}
+
+/* ── State ── */
+const state = { q1: 0, q2: 0, q3: 0, q4: 0, q5: 0 };
+const dims = ['q2', 'q3', 'q4', 'q5'];
+const dimNames = { q2: 'Identity', q3: 'Drift', q4: 'Verification', q5: 'Recovery' };
+const q1Labels = { 1:'Negligible', 2:'Inconvenient', 3:'Consequential', 4:'Damaging', 5:'Critical' };
+
+/* ── Industry selection gates Q1 ── */
+document.getElementById('industry-select').addEventListener('change', function() {
+  if (this.value) {
+    document.getElementById('q1-group').classList.remove('hidden');
+  } else {
+    document.getElementById('q1-group').classList.add('hidden');
+  }
+  invalidateResults();
+});
+
+/* ── Scale option click handling ── */
+document.querySelectorAll('.scale-option').forEach(opt => {
+  opt.addEventListener('click', function() {
+    const q = this.dataset.q;
+    const val = parseInt(this.dataset.val);
+    this.querySelector('input').checked = true;
+    state[q] = val;
+
+    this.closest('.scale-options').querySelectorAll('.scale-option').forEach(o => o.classList.remove('selected'));
+    this.classList.add('selected');
+
+    if (q === 'q1') handleQ1Change(val);
+    invalidateResults();
+    updateEvaluateButton();
+  });
+});
+
+/* ── Invalidate results when inputs change ── */
+function invalidateResults() {
+  if (document.getElementById('results').classList.contains('visible')) {
+    document.getElementById('results').classList.remove('visible');
+    assessmentTimestamp = '';
+    assessmentRef = '';
+    document.getElementById('popup-agree-check').checked = false;
+    document.getElementById('terms-accept-btn').disabled = true;
+  }
+}
+
+/* ── Also invalidate if verbatim text changes ── */
+document.querySelectorAll('.verbatim-section textarea').forEach(ta => {
+  ta.addEventListener('input', function() {
+    invalidateResults();
+  });
+});
+
+function handleQ1Change(val) {
+  const exit = document.getElementById('q1-exit');
+  if (val === 1) {
+    exit.style.display = 'block';
+    dims.forEach(d => document.getElementById(d + '-group').classList.add('hidden'));
+    document.getElementById('terms-section').classList.add('hidden');
+    document.getElementById('results').classList.remove('visible');
+  } else {
+    exit.style.display = 'none';
+    dims.forEach(d => document.getElementById(d + '-group').classList.remove('hidden'));
+    document.getElementById('terms-section').classList.remove('hidden');
+  }
+}
+
+/* ── Terms & evaluate button ── */
+const termsOverlay = document.getElementById('terms-overlay');
+const termsEvalBtn = document.getElementById('terms-evaluate-btn');
+let assessmentTimestamp = '';
+let assessmentRef = '';
+
+document.getElementById('terms-evaluate-btn').addEventListener('click', function() {
+  termsOverlay.classList.add('open');
+});
+
+document.getElementById('terms-close-x').addEventListener('click', function() {
+  termsOverlay.classList.remove('open');
+});
+
+termsOverlay.addEventListener('click', function(e) {
+  if (e.target === termsOverlay) termsOverlay.classList.remove('open');
+});
+
+document.getElementById('popup-agree-check').addEventListener('change', function() {
+  document.getElementById('terms-accept-btn').disabled = !this.checked;
+});
+
+document.getElementById('terms-accept-btn').addEventListener('click', function() {
+  termsOverlay.classList.remove('open');
+  assessmentTimestamp = new Date().toISOString();
+  assessmentRef = (crypto.randomUUID ? crypto.randomUUID() : ('xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0; return (c === 'x' ? r : (r&0x3|0x8)).toString(16); })));
+  const dateDisplay = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
+  document.getElementById('assess-date').textContent = 'Assessed: ' + dateDisplay;
+  document.getElementById('assess-ref').textContent = 'Ref: ' + assessmentRef;
+  const result = computeResult();
+  renderResults(result);
+  document.getElementById('results').classList.add('visible');
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+function updateEvaluateButton() {
+  const allAnswered = state.q1 >= 2 && dims.every(d => state[d] > 0);
+  termsEvalBtn.disabled = !allAnswered;
+}
+
+/* ── Certificate form validation ── */
+/* (removed — no form fields needed, user emails directly) */
+
+/* ── SCORING ── */
+
+function computeResult() {
+  const q1 = state.q1;
+  const thresholds = { 2: 2, 3: 3, 4: 4, 5: 4 };
+  const threshold = thresholds[q1] || 3;
+
+  const dimResults = {};
+  let hasGap = false;
+  let hasSevere = false;
+  let hasUnknown = false;
+
+  dims.forEach(d => {
+    const score = state[d];
+    const gap = threshold - score;
+
+    if (score === 0) {
+      dimResults[d] = { score, status: 'unknown', gap: null };
+      hasUnknown = true;
+    } else if (gap <= 0) {
+      dimResults[d] = { score, status: 'ok', gap: 0 };
+    } else if (gap >= 2 || (q1 >= 4 && score <= 1)) {
+      dimResults[d] = { score, status: 'severe', gap };
+      hasSevere = true;
+    } else {
+      dimResults[d] = { score, status: 'gap', gap };
+      hasGap = true;
+    }
+  });
+
+  let tier;
+  if (hasUnknown || (hasSevere && q1 >= 4)) {
+    tier = 'uncertain';
+  } else if (hasGap || hasSevere) {
+    tier = 'partial';
+  } else {
+    tier = 'calibrated';
+  }
+
+  return { q1, threshold, dimResults, tier };
+}
+
+function renderResults(result) {
+  const tierDesc = {
+    calibrated: 'Coverage is proportional to consequence across all four dimensions. Minimal exposure.',
+    partial: 'Coverage falls short of what consequence demands in one or more dimensions. Material exposure exists.',
+    uncertain: 'Coverage cannot be fully determined on one or more dimensions. Exposure is unknown.'
+  };
+
+  const tiers = ['calibrated', 'partial', 'uncertain'];
+  const activeIdx = tiers.indexOf(result.tier);
+
+  for (let i = 0; i < 3; i++) {
+    const el = document.getElementById('tier-' + i);
+    if (i === activeIdx) {
+      el.style.opacity = '1';
+      el.style.transform = 'scale(1)';
+      el.style.fontSize = '16px';
+      el.style.padding = '8px 24px';
+      el.style.fontWeight = '600';
+    } else {
+      el.style.opacity = '0.3';
+      el.style.transform = 'scale(0.85)';
+      el.style.fontSize = '11px';
+      el.style.padding = '6px 14px';
+      el.style.fontWeight = '600';
+    }
+  }
+
+  document.getElementById('results-summary').textContent =
+    tierDesc[result.tier] + ' Consequence level: ' + result.q1 + ' (' + q1Labels[result.q1] + '). Coverage threshold: ' + result.threshold + '.';
+
+  renderRadar(result);
+  renderGaps(result);
+  captureAssessment();
+}
+
+function renderRadar(result) {
+  const svg = document.getElementById('radar-chart');
+  const cx = 160, cy = 140, maxR = 100;
+
+  function polarToXY(axis, value) {
+    const angles = [-Math.PI/2, 0, Math.PI/2, Math.PI];
+    const r = (value / 5) * maxR;
+    return {
+      x: cx + r * Math.cos(angles[axis]),
+      y: cy + r * Math.sin(angles[axis])
+    };
+  }
+
+  function makePolygon(values, cls, extra) {
+    const points = values.map((v, i) => {
+      const p = polarToXY(i, v);
+      return p.x + ',' + p.y;
+    }).join(' ');
+    return '<polygon points="' + points + '" ' + cls + ' ' + (extra||'') + '/>';
+  }
+
+  let html = '';
+
+  for (let i = 1; i <= 5; i++) {
+    html += makePolygon([i,i,i,i],
+      'fill="none" stroke="#1B3A5C" stroke-width="0.5" opacity="0.08"');
+  }
+
+  const axLabels = ['Identity', 'Drift', 'Verification', 'Recovery'];
+  const labelPositions = [
+    { x: cx, y: 24, anchor: 'middle' },
+    { x: 298, y: cy + 4, anchor: 'end' },
+    { x: cx, y: 268, anchor: 'middle' },
+    { x: 22, y: cy + 4, anchor: 'start' }
+  ];
+
+  for (let i = 0; i < 4; i++) {
+    const p = polarToXY(i, 5);
+    html += '<line x1="'+cx+'" y1="'+cy+'" x2="'+p.x+'" y2="'+p.y+'" stroke="#1B3A5C" stroke-width="0.5" opacity="0.1"/>';
+    const lp = labelPositions[i];
+    html += '<text x="'+lp.x+'" y="'+lp.y+'" text-anchor="'+lp.anchor+'" font-size="11" fill="#1B3A5C" font-family="-apple-system,sans-serif">'+axLabels[i]+'</text>';
+  }
+
+  const t = result.threshold;
+  html += makePolygon([t,t,t,t],
+    'fill="none" stroke="#1B3A5C" stroke-width="1.5" stroke-dasharray="5,4" opacity="0.35"');
+
+  const scores = dims.map(d => result.dimResults[d].score);
+  html += makePolygon(scores,
+    'fill="rgba(27,58,92,0.08)" stroke="#1B3A5C" stroke-width="2"');
+
+  scores.forEach((s, i) => {
+    const p = polarToXY(i, s);
+    html += '<circle cx="'+p.x+'" cy="'+p.y+'" r="4" fill="#1B3A5C"/>';
+  });
+
+  svg.innerHTML = html;
+}
+
+function renderGaps(result) {
+  const list = document.getElementById('gap-list');
+  const statusText = {
+    ok: 'Coverage proportional',
+    gap: 'Gap identified',
+    severe: 'Significant gap',
+    unknown: 'Cannot determine'
+  };
+
+  let html = '';
+  dims.forEach(d => {
+    const r = result.dimResults[d];
+    const cls = r.status === 'ok' ? 'ok' : (r.status === 'severe' || r.status === 'unknown') ? 'severe' : 'gap';
+    html += '<div class="gap-item ' + cls + '">';
+    html += '<span class="gap-dim">' + dimNames[d] + '</span>';
+    html += '<span class="gap-detail">' + statusText[r.status] + '</span>';
+    html += '<span class="gap-scores">' + r.score + ' / ' + result.threshold + '</span>';
+    html += '</div>';
+  });
+
+  list.innerHTML = html;
+}
+
+/* ── SEND CERTIFICATE REQUEST ── */
+
+</script>
+
+</body>
+</html>

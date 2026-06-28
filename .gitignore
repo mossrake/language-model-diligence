@@ -1,0 +1,10 @@
+# Language Model Diligence - Git Ignore File
+# Copyright (C) 2026 Mossrake Group, LLC
+# 
+
+# Misc
+.DS_Store
+*outline.md
+*.docx
+*analytics*
+*Article.md
