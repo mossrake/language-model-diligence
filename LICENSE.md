@@ -6,16 +6,20 @@
 
 - Individuals may view and study the source code for personal and educational purposes
 - Organizations may use the hosted assessment at its published URL to evaluate their own AI processes
+- Organizations own their assessment results and may use, publish, and share them freely, including in client-facing materials, regulatory filings, marketing, procurement responses, and any other context
 - Academic citation, discussion, and reference are encouraged with attribution
 
 ## Restrictions
 
-- NO commercial use without explicit written permission from Mossrake Group, LLC
+Do not build a business around our intellectual property. The following restrictions apply to the Mossrake Language Model Diligence framework, assessment instrument, and associated materials — not to your own assessment results, which are yours.
+
 - NO offering assessments, certifications, consulting, or related services to third parties for compensation based on or derived from the Mossrake Language Model Diligence framework
 - NO incorporation into commercial products, platforms, or services
 - NO hosting, redistributing, or serving the assessment instrument from any domain or infrastructure other than Mossrake's authorized locations
 - NO creating derivative assessment instruments based on this implementation
 - NO use of the assessment data, scoring logic, or outputs to develop, train, benchmark, or commercialize competing assessment methodologies or services
+
+Any use not covered above that you believe may require permission, contact info@mossrake.com.
 
 ## Category and Framework
 
@@ -36,7 +40,11 @@ When referencing this work, include attribution to:
 
 ## Framework Adoption
 
-Organizations are encouraged to adopt Language Model Diligence as a practice and to reference the category freely. Internal use of the Mossrake Language Model Diligence framework — meaning evaluating your own organization's AI processes using the concepts described in the framework — is encouraged with attribution to Mossrake Group, LLC. Any published reference to the Mossrake framework, derivative work based on the framework, or commercial application of the framework requires attribution. Commercial use requires explicit written permission.
+Organizations are encouraged to adopt Language Model Diligence as a practice and to reference the category freely. Internal use of the Mossrake Language Model Diligence framework — meaning evaluating your own organization's AI processes using the concepts described in the framework — is encouraged with attribution to Mossrake Group, LLC.
+
+Your assessment results belong to you. You may publish your tier, share your scores, reference your results in any context, and describe your assessment experience without restriction. Attribution to the Mossrake Language Model Diligence framework is appreciated when doing so.
+
+What requires explicit written permission is building a business around the framework: offering Mossrake-derived assessments to others for compensation, incorporating the framework into a commercial product, or creating competing tools based on it. If you are assessing your own organization, you are a user, not a licensee, and no permission is needed.
 
 ## Disclaimer
 

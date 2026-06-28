@@ -29,8 +29,9 @@ See [LICENSE.md](LICENSE.md) for full terms.
 
 - ✅ View, study, and reference for personal and educational use
 - ✅ Take the assessment for your own organization
+- ✅ Publish, share, and use your own assessment results however you choose
 - ✅ Academic citation and discussion
-- ❌ Commercial use without explicit written permission
+- ❌ Building a business around the framework without explicit written permission
 - ❌ Offering assessments, certifications, or consulting to third parties based on the Mossrake framework
 - ❌ Incorporation into commercial products or services
 - ❌ Hosting or redistributing the assessment instrument
@@ -43,7 +44,7 @@ The Mossrake Language Model Diligence framework — including the five-question 
 
 Mossrake® and Mossrake Language Model Diligence™ are trademarks of Mossrake Group, LLC.
 
-Organizations are encouraged to adopt Language Model Diligence as a practice and to use the Mossrake framework for internal evaluation with attribution to Mossrake Group, LLC. Commercial use of the framework requires a license.
+Organizations are encouraged to adopt Language Model Diligence as a practice and to use the Mossrake framework for internal evaluation with attribution to Mossrake Group, LLC. Your assessment results are yours to use, publish, and share without restriction. Building a business around the framework requires a license.
 
 ## Contact
 

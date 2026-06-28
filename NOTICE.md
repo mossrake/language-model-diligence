@@ -8,7 +8,8 @@ This repository contains:
 
 1. **Assessment Instrument**: Mossrake Language Model Diligence Assessment
    - Copyright © 2026 Mossrake Group, LLC
-   - All rights reserved for commercial use
+   - Do not build a business around this framework without a license
+   - Organizations own their own assessment results
    - See LICENSE.md for permitted uses
 
 2. **Terms of Use**: Governing terms for the assessment
