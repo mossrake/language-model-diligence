@@ -669,13 +669,6 @@ textarea::placeholder {
     <p>This assessment evaluates a single AI model deployed in a defined process. For each AI model in your organization's portfolio, a separate assessment should be completed by the person or team with direct knowledge of both the technical implementation and the business context.</p>
     <p>Processes that involve multiple models, pipelines, or agentic architectures require a facilitated assessment &ndash; <a href="mailto:info@mossrake.com" style="color:var(--md-blue)">contact Mossrake</a> for details.</p>
 
-    <details class="examples">
-      <summary>Example descriptions</summary>
-      <p class="example-text">"We use a large language model to generate draft responses to inbound customer support tickets. It receives the customer's message and their account history, and generates a draft response that goes into a queue for agent review before sending."</p>
-      <p class="example-text">"A language model reviews incoming invoices against purchase orders and flags discrepancies. Flagged items go to accounts payable for manual review; matched items are auto-approved for payment up to $5,000."</p>
-      <p class="example-text">"Our compliance team uses a language model to screen marketing copy against regulatory guidelines before publication. The model identifies potential violations and generates a summary for the compliance officer to review."</p>
-    </details>
-
     <div class="field-group" style="margin-top:20px;margin-bottom:0">
       <label class="field-label">Industry</label>
       <select id="industry-select" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:var(--radius);font-family:inherit;font-size:14px;color:var(--dk-gray);background:var(--white);cursor:pointer">
@@ -697,6 +690,12 @@ textarea::placeholder {
 
     <div class="field-group" style="margin-top:16px;margin-bottom:0">
       <label class="field-label">Describe the model and its role in your process (recommended)</label>
+      <details class="examples" style="margin-top:8px">
+        <summary>Example descriptions</summary>
+        <p class="example-text">"We use a large language model to generate draft responses to inbound customer support tickets. It receives the customer's message and their account history, and generates a draft response that goes into a queue for agent review before sending."</p>
+        <p class="example-text">"A language model reviews incoming invoices against purchase orders and flags discrepancies. Flagged items go to accounts payable for manual review; matched items are auto-approved for payment up to $5,000."</p>
+        <p class="example-text">"Our compliance team uses a language model to screen marketing copy against regulatory guidelines before publication. The model identifies potential violations and generates a summary for the compliance officer to review."</p>
+      </details>
       <textarea id="process-desc" placeholder="What does the model do? What inputs does it receive? What is done with its output?"></textarea>
     </div>
   </div>
@@ -714,7 +713,7 @@ textarea::placeholder {
       <label class="scale-option" data-q="q1" data-val="1">
         <input type="radio" name="q1" value="1">
         <span class="scale-num">1</span>
-        <span class="scale-label"><strong>Negligible.</strong> Wrong outputs for a week would not be noticed outside the immediate team.</span>
+        <span class="scale-label"><strong>Negligible.</strong> Wrong outputs would have little or no practical effect &mdash; no decisions, commitments, or downstream processes depend on accuracy.</span>
       </label>
       <label class="scale-option" data-q="q1" data-val="2">
         <input type="radio" name="q1" value="2">
