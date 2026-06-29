@@ -5,14 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mossrake Language Model Diligence - Self-Assessment</title>
 
-<!-- Google Analytics 4 — replace G-471DTZWSZC with your Measurement ID -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-471DTZWSZC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-471DTZWSZC');
-</script>
 <style>
 :root {
   --dk-blue: #1B3A5C;
@@ -947,6 +939,7 @@ textarea::placeholder {
         <p>The Service is provided "as is." Use of the assessment and any decisions based upon it are at your own discretion and risk.</p>
 
         <p style="margin-top:20px"><a href="https://mossrake.github.io/language-model-diligence/lmd-a-terms-of-use.html" target="_blank" style="color:var(--md-blue);font-weight:500">Read the full Terms of Use &rarr;</a></p>
+        <p style="margin-top:6px"><a href="https://mossrake.ai/privacy" target="_blank" style="color:var(--md-blue);font-weight:500">Read the Privacy Statement &rarr;</a></p>
       </div>
       <div class="terms-popup-footer" style="display:flex;flex-direction:column;gap:10px;align-items:stretch">
         <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-size:12px;color:var(--dk-gray)">
@@ -991,36 +984,13 @@ textarea::placeholder {
 
   <!-- ══════ FOOTER ══════ -->
   <div class="assess-footer">
+    <p style="margin-bottom:8px"><a href="https://mossrake.github.io/language-model-diligence/lmd-a-terms-of-use.html" target="_blank" style="color:var(--md-blue)">Terms of Use</a> &nbsp;&middot;&nbsp; <a href="https://mossrake.ai/privacy" target="_blank" style="color:var(--md-blue)">Privacy Statement</a></p>
     &copy; 2026 Mossrake Group, LLC. Mossrake&reg; and Mossrake Language Model Diligence&trade; are trademarks of Mossrake Group, LLC. Use without express written consent strictly prohibited.
   </div>
 
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════════
-   DATA CAPTURE
-   Fires a GA4 custom event on evaluation.
-   GA4 snippet is loaded in the page head.
-   Measurement ID: G-471DTZWSZC
-   ═══════════════════════════════════════════════════ */
-
-function captureAssessment() {
-  var result = computeResult();
-
-  if (typeof gtag === 'function') {
-    gtag('event', 'assessment_complete', {
-      industry: document.getElementById('industry-select').value || '(not selected)',
-      q1: state.q1,
-      q2: state.q2,
-      q3: state.q3,
-      q4: state.q4,
-      q5: state.q5,
-      tier: result.tier,
-      threshold: result.threshold
-    });
-  }
-}
-
 /* ── State ── */
 const state = { q1: 0, q2: 0, q3: 0, q4: 0, q5: 0 };
 const dims = ['q2', 'q3', 'q4', 'q5'];
@@ -1203,7 +1173,6 @@ function renderResults(result) {
 
   renderRadar(result);
   renderGaps(result);
-  captureAssessment();
 }
 
 function renderRadar(result) {
