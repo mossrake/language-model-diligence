@@ -27,14 +27,14 @@ For the full framework, scoring methodology, intellectual lineage, and worked ex
 
 See [LICENSE.md](LICENSE.md) for full terms.
 
-- ✅ View, study, and reference for personal and educational use
+- ✅ View, study, fork, and reference the source for personal, non-commercial use
 - ✅ Take the Self-Assessment for your own organization
 - ✅ Publish, share, and use your own assessment results however you choose
 - ✅ Academic citation and discussion
 - ❌ Building a business around the framework without explicit written permission
 - ❌ Offering assessments, certifications, or consulting to third parties based on the Mossrake framework
 - ❌ Incorporation into commercial products or services
-- ❌ Hosting or redistributing the assessment instrument
+- ❌ Rehosting the assessment instrument as a service, or copying and reskinning it (relabeling doesn't make a copy permissible)
 
 ## Intellectual Property
 

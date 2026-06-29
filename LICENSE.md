@@ -4,7 +4,7 @@
 
 ## Permitted Uses
 
-- Individuals may view and study the source code for personal and educational purposes
+- Individuals may view, study, and fork the source code for personal, educational, and non-commercial reference purposes
 - Organizations may use the hosted Self-Assessment at its published URL to evaluate their own AI processes
 - Organizations own their assessment results and may use, publish, and share them freely, including in client-facing materials, regulatory filings, marketing, procurement responses, and any other context
 - Academic citation, discussion, and reference are encouraged with attribution
@@ -15,8 +15,8 @@ Do not build a business around our intellectual property. The following restrict
 
 - NO offering assessments, certifications, consulting, or related services to third parties for compensation based on or derived from the Mossrake Language Model Diligence framework
 - NO incorporation into commercial products, platforms, or services
-- NO hosting, redistributing, or serving the assessment instrument from any domain or infrastructure other than Mossrake's authorized locations
-- NO creating derivative assessment instruments based on this implementation
+- NO rehosting, redistributing, or serving the assessment instrument as a working assessment, or as part of any product or service, from any domain or infrastructure other than Mossrake's authorized locations (viewing, studying, and forking the source for personal, non-commercial reference is permitted, per Permitted Uses above)
+- NO copying, reskinning, relabeling, translating, modifying, or otherwise creating derivative assessment instruments from this implementation or its source code — changing the wording, styling, branding, or labels does not make a copy permissible
 - NO use of the assessment data, scoring logic, or outputs to develop, train, benchmark, or commercialize competing assessment methodologies or services
 
 For any use not covered above that you believe may require permission, contact info@mossrake.com.
