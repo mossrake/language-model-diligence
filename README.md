@@ -4,16 +4,16 @@
 
 > Exposure is the gap between consequence and coverage.
 
-This repository hosts the Mossrake Language Model Diligence Assessment instrument and associated materials.
+This repository hosts the Mossrake Language Model Diligence Self-Assessment instrument and associated materials.
 
 ## What's Here
 
-- **lmd-a.html** — The Language Model Diligence Assessment. Five questions that measure the gap between what's at stake and what you can see about how a language model operates in your process.
-- **lmd-a-terms-of-use.html** — Terms of Use governing the assessment.
+- **lmd-a.html** — The Language Model Diligence Self-Assessment. Five questions that measure the gap between what's at stake and what you can see about how a language model operates in your process.
+- **lmd-a-terms-of-use.html** — Terms of Use governing the Self-Assessment.
 
 ## About Language Model Diligence
 
-Language Model Diligence is the practice of applying established model governance disciplines to language model deployments. The Mossrake Language Model Diligence framework provides a structured approach to understanding AI process exposure, grounded in established practices from quantitative finance, pharmaceutical manufacturing, and avionics safety engineering.
+Language Model Diligence is the practice of applying established model governance disciplines to language model deployments. The Mossrake Language Model Diligence framework provides a structured approach to understanding AI process exposure, grounded in established practices from quantitative finance, pharmaceutical manufacturing, avionics safety engineering, and software supply-chain security.
 
 The framework measures two things:
 - **Consequence** (Q1) — how much is at stake if the model produces a wrong output
@@ -28,7 +28,7 @@ For the full framework, scoring methodology, intellectual lineage, and worked ex
 See [LICENSE.md](LICENSE.md) for full terms.
 
 - ✅ View, study, and reference for personal and educational use
-- ✅ Take the assessment for your own organization
+- ✅ Take the Self-Assessment for your own organization
 - ✅ Publish, share, and use your own assessment results however you choose
 - ✅ Academic citation and discussion
 - ❌ Building a business around the framework without explicit written permission
@@ -52,4 +52,4 @@ For questions, commercial licensing, or engagement inquiries: info@mossrake.com
 
 ---
 
-© 2026 Mossrake Group, LLC. Mossrake® and Mossrake Language Model Diligence™ are trademarks of Mossrake Group, LLC. Use without express written consent strictly prohibited.
+© 2026 Mossrake Group, LLC. Mossrake® and Mossrake Language Model Diligence™ are trademarks of Mossrake Group, LLC.
