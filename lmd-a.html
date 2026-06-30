@@ -1168,8 +1168,9 @@ function renderResults(result) {
     }
   }
 
+  const thresholdDesc = { 2: 'Coverage scores of 2+ generally sufficient.', 3: 'Coverage scores of 3+ expected.', 4: 'Coverage scores of 4+ expected.', 5: 'Coverage scores of 4–5 required.' };
   document.getElementById('results-summary').textContent =
-    tierDesc[result.tier] + ' Consequence level: ' + result.q1 + ' (' + q1Labels[result.q1] + '). Coverage threshold: ' + result.threshold + '.';
+    tierDesc[result.tier] + ' Consequence level: ' + result.q1 + ' (' + q1Labels[result.q1] + '). ' + thresholdDesc[result.q1];
 
   renderRadar(result);
   renderGaps(result);
