@@ -21,6 +21,20 @@ Do not build a business around our intellectual property. The following restrict
 
 For any use not covered above that you believe may require permission, contact info@mossrake.com.
 
+## Commercial Licensing
+
+The restrictions above define uses that are reserved, not unavailable. Commercial licenses are offered for uses including:
+
+- Incorporation of the framework into commercial products, platforms, or services
+- Framework-conformant integrations, connectors, and reporting (e.g., emitting or consuming framework-conformant assessment records)
+- Offering assessments, advisory, or related services based on the framework
+
+Inquiries: info@mossrake.com. Response terms are straightforward; the intent of this license is attribution and alignment, not obstruction.
+
+## Separately Licensed Artifacts
+
+Mossrake may publish certain artifacts — such as machine-readable schemas, data formats, conformance fixtures, or reference tooling — under their own license terms. Where a file, directory, or repository carries its own license, that license governs that artifact and prevails over this document for that artifact.
+
 ## Category and Framework
 
 "Language Model Diligence" describes a practice: the application of established model governance disciplines to language model deployments. As a category, it is not proprietary to Mossrake, and its broad adoption across industries and institutions is encouraged.
@@ -44,7 +58,7 @@ Organizations are encouraged to adopt Language Model Diligence as a practice and
 
 Your assessment results belong to you. You may publish your tier, share your scores, reference your results in any context, and describe your assessment experience without restriction. Attribution to the Mossrake Language Model Diligence framework is appreciated when doing so.
 
-What requires explicit written permission is building a business around the framework: offering Mossrake-derived assessments to others for compensation, incorporating the framework into a commercial product, or creating competing tools based on it. If you are assessing your own organization, you are a user, not a licensee, and no permission is needed.
+What requires explicit written permission is building a business around the framework: offering Mossrake-derived assessments to others for compensation, incorporating the framework into a commercial product, or creating competing tools based on it. If you are assessing your own organization, you are a user, not a licensee, and no permission is needed. If you want to build commercially on the framework, see Commercial Licensing above — that path exists and is intended to be used.
 
 ## Disclaimer
 
@@ -59,4 +73,4 @@ info@mossrake.com
 
 ---
 
-Last updated: June 2026
+Last updated: July 2026

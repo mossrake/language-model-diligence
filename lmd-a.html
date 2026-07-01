@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<!--
+  Mossrake Language Model Diligence — Self-Assessment (LMD-A)
+  Instrument version: 1.0 (June 2026)
+  © 2026 Mossrake Group, LLC. Mossrake® and Mossrake Language Model Diligence™
+  are trademarks of Mossrake Group, LLC.
+
+  This source is publicly viewable for reference. Public availability does not
+  constitute a grant of rights beyond those stated in LICENSE.md and NOTICE.md
+  in this repository. Rehosting this instrument as a working assessment, or
+  creating derivative assessment instruments from it, requires a license.
+  Commercial licensing: info@mossrake.com
+-->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -992,6 +1004,7 @@ textarea::placeholder {
 
 <script>
 /* ── State ── */
+const LMD_A_VERSION = '1.0';
 const state = { q1: 0, q2: 0, q3: 0, q4: 0, q5: 0 };
 const dims = ['q2', 'q3', 'q4', 'q5'];
 const dimNames = { q2: 'Identity', q3: 'Drift', q4: 'Verification', q5: 'Recovery' };
@@ -1084,7 +1097,7 @@ document.getElementById('terms-accept-btn').addEventListener('click', function()
   assessmentRef = (crypto.randomUUID ? crypto.randomUUID() : ('xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) { var r = Math.random()*16|0; return (c === 'x' ? r : (r&0x3|0x8)).toString(16); })));
   const dateDisplay = new Date().toLocaleDateString('en-US', { year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
   document.getElementById('assess-date').textContent = 'Assessed: ' + dateDisplay;
-  document.getElementById('assess-ref').textContent = 'Ref: ' + assessmentRef;
+  document.getElementById('assess-ref').textContent = 'Ref: ' + assessmentRef + ' \u00b7 Instrument: LMD-A v' + LMD_A_VERSION;
   const result = computeResult();
   renderResults(result);
   document.getElementById('results').classList.add('visible');

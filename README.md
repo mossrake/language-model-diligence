@@ -36,6 +36,8 @@ See [LICENSE.md](LICENSE.md) for full terms.
 - ❌ Incorporation into commercial products or services
 - ❌ Rehosting the assessment instrument as a service, or copying and reskinning it (relabeling doesn't make a copy permissible)
 
+The ❌ items are licensable, not forbidden. Commercial licenses for framework implementations, integrations, and service offerings are available — contact info@mossrake.com.
+
 ## Intellectual Property
 
 "Language Model Diligence" describes a practice — the application of established model governance disciplines to language model deployments. As a category, it is not proprietary to Mossrake, and its broad adoption is encouraged.
@@ -45,6 +47,10 @@ The Mossrake Language Model Diligence framework — including the five-question 
 Mossrake® and Mossrake Language Model Diligence™ are trademarks of Mossrake Group, LLC.
 
 Organizations are encouraged to adopt Language Model Diligence as a practice and to use the Mossrake framework for internal evaluation with attribution to Mossrake Group, LLC. Your assessment results are yours to use, publish, and share without restriction. Building a business around the framework requires a license.
+
+## Roadmap
+
+Machine-readable artifacts supporting framework-conformant integrations — including an assessment record schema and conformance fixtures — are under development and will be published under their own license terms suited to broad implementation. Tool and platform vendors interested in emitting or consuming framework-conformant records are invited to get in touch: info@mossrake.com.
 
 ## Contact
 

@@ -18,6 +18,7 @@ This repository contains:
 ## Trademarks
 
 - **Mossrake®** and **Mossrake Language Model Diligence™** are trademarks of Mossrake Group, LLC
+- Certification and conformance designations associated with the framework — including designations indicating that a practitioner is certified against, or that a product or service is verified as conformant with, the Mossrake Language Model Diligence framework — are reserved to Mossrake Group, LLC. No such designation may be claimed or implied without express written authorization.
 
 ## Category and Framework
 
@@ -36,7 +37,7 @@ The Mossrake Language Model Diligence framework is the proprietary intellectual 
 
 The facilitated assessment methodology contains proprietary elements that are not publicly disclosed.
 
-Public availability of this source code does not constitute a grant of rights to the underlying framework design, methodology, or intellectual property beyond what is explicitly stated in LICENSE.md.
+Public availability of this source code does not constitute a grant of rights to the underlying framework design, methodology, or intellectual property beyond what is explicitly stated in LICENSE.md. Certain artifacts (such as machine-readable schemas, conformance fixtures, or reference tooling) may be published by Mossrake under their own license terms; where present, those terms govern the artifact they accompany.
 
 ## Attribution Requirements
 
@@ -65,4 +66,4 @@ info@mossrake.com
 
 ---
 
-Last updated: June 2026
+Last updated: July 2026
